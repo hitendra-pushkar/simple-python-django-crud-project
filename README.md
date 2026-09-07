@@ -1,0 +1,1 @@
+# simple-python-django-crud-project
