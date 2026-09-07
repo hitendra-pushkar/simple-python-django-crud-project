@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="table-responsive">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Add <b>Employee</b></h2>
+                </div>
+                <div class="col-sm-6">
+                    <a href="{% url 'employee_list' %}" class="btn btn-success">
+                        <i class="material-icons">&#xE147;</i> <span>Go to the List</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="modal-content">
+            <form method="POST" action="{% url 'employee_create' %}">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        {{ form.emp_name }}
+                        {% if form.emp_name.errors %}
+                            <div class="text-danger">{{ form.emp_name.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        {{ form.emp_email }}
+                        {% if form.emp_email.errors %}
+                            <div class="text-danger">{{ form.emp_email.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        {{ form.emp_address }}
+                        {% if form.emp_address.errors %}
+                            <div class="text-danger">{{ form.emp_address.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        {{ form.emp_phone }}
+                        {% if form.emp_phone.errors %}
+                            <div class="text-danger">{{ form.emp_phone.errors }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="{% url 'employee_list' %}" class="btn btn-default">Cancel</a>
+                    <input type="submit" class="btn btn-success" name="emp_add" value="Add">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
