@@ -129,7 +129,7 @@ source venv/bin/activate
 ```
 
 ### 4. Install Dependencies
-If the project contains a `requirements.txt` file, install the required packages using:
+If the project contains a `requirements.txt` file, install the required packages using: for information only
 ```bash
 pip install -r requirements.txt
 ```
