@@ -80,13 +80,19 @@ Remove an existing record from the database.
 
 Displays records stored in the database.
 
+![Add Form Screen](list-page.png)
+
 ### ➕ Add Record
 
 Allows users to create a new record.
 
+![Add Form Screen](add-form.png)
+
 ### ✏️ Edit Record
 
 Allows users to update an existing record.
+
+![Add Form Screen](edit-form.png)
 
 ---
 
