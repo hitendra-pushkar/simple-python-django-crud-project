@@ -1,4 +1,4 @@
-# Simple Python Django PostgreSQL CRUD Project
+# 🐍 Simple Python Django PostgreSQL CRUD Project
 
 > A beginner-friendly CRUD web application built with **Python Django and PostgreSQL**, demonstrating Create, Read, Update, and Delete operations with a database.
 
